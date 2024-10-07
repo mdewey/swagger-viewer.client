@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sidebar{
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li{
+      padding: 0.5rem;
+      background-color: #3c3c3c;
+      margin-bottom: 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      &:hover{
+        background-color: #9483f5;
+      }
+    }
+  }
+}
