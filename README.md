@@ -1,6 +1,5 @@
 # Simple swagger file viewer
 
-- Delete
 - rename
 - download file
 - style
