@@ -28,6 +28,14 @@ export const swaggerSlice = createSlice({
     addSwagger: (state, action: PayloadAction<SwaggerItem>) => {
       state.swaggers.push(action.payload)
     },
+    updateSwagger: (state, action: PayloadAction<SwaggerItem>) => {
+      state.swaggers = state.swaggers.map(swagger => {
+        if (swagger.id === action.payload.id) {
+          return action.payload
+        }
+        return swagger
+      })
+    },    
     removeSwagger: (state, action: PayloadAction<SwaggerItem>) => {
       state.swaggers = state.swaggers.filter(swagger => swagger.id !== action.payload.id)
     },
@@ -42,5 +50,5 @@ export const swaggerSlice = createSlice({
   },
 })
 
-export const {initSwaggers,  addSwagger, setSelectedSwagger, removeSwagger } = swaggerSlice.actions
+export const {initSwaggers,  addSwagger, setSelectedSwagger, removeSwagger, updateSwagger } = swaggerSlice.actions
 export default swaggerSlice.reducer

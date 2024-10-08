@@ -8,11 +8,11 @@ import { initSwaggers } from './features/swaggers/swaggerSlice'
 
 import { useDispatch } from 'react-redux'
 
-
+import { LOCAL_STORAGE_KEY } from './constants'
 
 function App() {
 
-  const [swaggers] = useLocalStorage('swaggers', []);
+  const [swaggers] = useLocalStorage(LOCAL_STORAGE_KEY, []);
 
   const dispatch = useDispatch();
   dispatch(initSwaggers(swaggers));

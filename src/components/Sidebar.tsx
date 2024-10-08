@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SwaggerItem, setSelectedSwagger, RootState, removeSwagger } from '../features/swaggers/swaggerSlice'
 import { useLocalStorage } from 'usehooks-ts';
 
-
+import { LOCAL_STORAGE_KEY } from '../constants';
 
 export default function Sidebar() {
   const swaggers = useSelector((state: RootState) => state.swagger.swaggers)
-  const [localSwaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>('swaggers', []);
+  const [localSwaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>(LOCAL_STORAGE_KEY, []);
   const dispatch = useDispatch();
   const select = (swaggerSelected: SwaggerItem) => {
     console.log('selected', swaggerSelected)

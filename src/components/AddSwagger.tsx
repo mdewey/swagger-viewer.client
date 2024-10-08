@@ -5,11 +5,12 @@ import { SwaggerItem, addSwagger } from '../features/swaggers/swaggerSlice'
 
 import { useLocalStorage } from 'usehooks-ts'
 
+import { LOCAL_STORAGE_KEY } from '../constants'
 
 export default function AddSwagger() {
   const dispatch = useDispatch();
 
-  const [swaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>('swaggers', []);
+  const [swaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>(LOCAL_STORAGE_KEY, []);
 
   const [file, setFile] = useState<File | null>(null);
 

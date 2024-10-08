@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 
 
 import { RootState } from '../features/swaggers/swaggerSlice'
+import SwaggerName from "./SwaggerName";
 
 
 export default function ShowSwagger() {
@@ -16,7 +17,7 @@ export default function ShowSwagger() {
 
   return (
     <div className="main">
-      <h2>{swagger.name}</h2>
+      <SwaggerName {...swagger} />
       <div>
         <SwaggerUI spec={swagger.data} />
       </div>
