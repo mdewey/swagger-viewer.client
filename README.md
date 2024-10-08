@@ -2,6 +2,7 @@
 
 - download file
 - style
+- test with real swaggers
 - deploy
 
 ## next
