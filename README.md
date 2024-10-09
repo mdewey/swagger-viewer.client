@@ -1,8 +1,9 @@
 # Simple swagger file viewer
 
-- download file
 - style
 - test with real swaggers
+  - yml
+  - json
 - deploy
 
 ## next

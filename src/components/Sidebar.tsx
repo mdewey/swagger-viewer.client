@@ -6,6 +6,7 @@ import { SwaggerItem, setSelectedSwagger, RootState, removeSwagger } from '../fe
 import { useLocalStorage } from 'usehooks-ts';
 
 import { LOCAL_STORAGE_KEY } from '../constants';
+import DownloadSwagger from "./DownloadSwagger";
 
 export default function Sidebar() {
   const swaggers = useSelector((state: RootState) => state.swagger.swaggers)
@@ -28,6 +29,7 @@ export default function Sidebar() {
         {swaggers.map((swagger: SwaggerItem) => (
           <li key={swagger.id} >
             <div onClick={() => select(swagger)}>{swagger.name}</div>
+            <DownloadSwagger {...swagger} />
             <button onClick={() => remove(swagger)}>remove</button>
           </li>
         ))}

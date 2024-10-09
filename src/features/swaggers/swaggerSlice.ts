@@ -5,6 +5,7 @@ export interface SwaggerItem {
   id: number
   name: string
   data: string 
+  fileType: string
 }
 
 export interface State {

@@ -30,7 +30,8 @@ export default function AddSwagger() {
       const swaggerToAdd: SwaggerItem = {
         id: Date.now(),
         name: file?.name || 'unknown',
-        data: e.target?.result as string
+        data: e.target?.result as string,
+        fileType: file?.type || 'unknown'
       }
       dispatch(addSwagger(swaggerToAdd));
       swaggers.push(swaggerToAdd);
