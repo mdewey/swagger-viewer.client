@@ -8,6 +8,9 @@ import { useLocalStorage } from 'usehooks-ts';
 import { LOCAL_STORAGE_KEY } from '../constants';
 import DownloadSwagger from "./DownloadSwagger";
 
+import { MdCancel } from "react-icons/md";
+
+import '../styles/swagger-list.scss'
 export default function Sidebar() {
   const swaggers = useSelector((state: RootState) => state.swagger.swaggers)
   const [localSwaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>(LOCAL_STORAGE_KEY, []);
@@ -24,13 +27,15 @@ export default function Sidebar() {
   }
 
   return (
-    <div className="sidebar">
+    <div className="swagger-list">
       <ul>
         {swaggers.map((swagger: SwaggerItem) => (
-          <li key={swagger.id} >
-            <div onClick={() => select(swagger)}>{swagger.name}</div>
-            <DownloadSwagger {...swagger} />
-            <button onClick={() => remove(swagger)}>remove</button>
+          <li key={swagger.id} className='swagger-item' onClick={() => select(swagger)}>
+            <div>{swagger.name}</div>
+            <div className="button-drawer">
+              <DownloadSwagger {...swagger} />
+              <button onClick={() => remove(swagger)} className="remove-button"><MdCancel /></button>
+            </div>
           </li>
         ))}
       </ul>

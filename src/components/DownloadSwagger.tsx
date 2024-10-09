@@ -1,5 +1,6 @@
 import { SwaggerItem } from "../features/swaggers/swaggerSlice";
 
+import { MdFileDownload } from "react-icons/md";
 
 export default function DownloadSwagger(swagger: SwaggerItem) {
   const downloadJson = () => {
@@ -14,6 +15,6 @@ export default function DownloadSwagger(swagger: SwaggerItem) {
   }
 
   return (
-    <button onClick={() => downloadJson()}>download</button>
+    <button onClick={() => downloadJson()} className="download-button"><MdFileDownload /></button>
   )
 }

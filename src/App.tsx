@@ -19,10 +19,21 @@ function App() {
 
   return (
     <>
-      <h1>Swagger Saver</h1>
-      <Sidebar />
-      <AddSwagger />
-      <ShowSwagger />
+      <header className='top-nav'>
+        <h1>Swagger Saver</h1>
+      </header>
+      <main className="content">
+        <div className='sidebar'>
+          <AddSwagger />
+          <Sidebar />
+        </div >
+        <div className='swagger-main'>
+          <ShowSwagger />
+        </div >
+      </main>
+      <footer>
+        currently saving to local storage
+      </footer>
     </>
   )
 }

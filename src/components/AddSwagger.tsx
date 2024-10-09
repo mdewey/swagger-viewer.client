@@ -7,6 +7,8 @@ import { useLocalStorage } from 'usehooks-ts'
 
 import { LOCAL_STORAGE_KEY } from '../constants'
 
+import '../styles/file-upload.scss'
+
 export default function AddSwagger() {
   const dispatch = useDispatch();
 
@@ -42,7 +44,7 @@ export default function AddSwagger() {
 
   return (
     <>
-      <div className="input-group">
+      <div className="file-uploader">
         <input id="file" type="file" onChange={handleFileChange} />
       </div>
       {file && (
