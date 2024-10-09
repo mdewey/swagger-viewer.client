@@ -18,6 +18,7 @@ body,
 
 .content{
   display:flex;
+  min-height: 90%;
   .sidebar{
     width: 20%;
     padding:1rem;
@@ -36,8 +37,7 @@ footer{
   height: 5rem;
   background-color: #2b2b2b;
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 0.75rem;
   text-align: center;
   margin-top: 1rem;
 }
