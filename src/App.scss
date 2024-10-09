@@ -28,3 +28,16 @@ body,
     background-color: #e6e6e6;
   }
 }
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}

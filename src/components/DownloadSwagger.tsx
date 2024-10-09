@@ -9,7 +9,7 @@ export default function DownloadSwagger(swagger: SwaggerItem) {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = swagger.name
+    a.download = `${swagger.name}.swagger.json`
     a.click()
     URL.revokeObjectURL(url)
   }

@@ -1,4 +1,5 @@
 import './App.scss'
+import { useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import ShowSwagger from './components/ShowSwagger'
 import AddSwagger from './components/AddSwagger'
@@ -11,11 +12,12 @@ import { useDispatch } from 'react-redux'
 import { LOCAL_STORAGE_KEY } from './constants'
 
 function App() {
-
   const [swaggers] = useLocalStorage(LOCAL_STORAGE_KEY, []);
-
   const dispatch = useDispatch();
-  dispatch(initSwaggers(swaggers));
+
+  useEffect(() => {
+    dispatch(initSwaggers(swaggers));
+  }, [dispatch, swaggers])
 
   return (
     <>

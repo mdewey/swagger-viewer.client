@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { RootState, SwaggerItem, updateSwagger } from "../features/swaggers/swaggerSlice";
@@ -11,9 +11,16 @@ import { LOCAL_STORAGE_KEY } from '../constants'
 export default function SwaggerName() {
   const swagger = useSelector((state: RootState) => state.swagger.selectedSwagger);
   const [isEditing, setIsEditing] = useState<boolean>(false);
+
   const [name, setName] = useState<string>(swagger ? swagger.name : '');
   const dispatch = useDispatch();
   const [swaggers, setLocalSwaggers] = useLocalStorage<SwaggerItem[]>(LOCAL_STORAGE_KEY, []);
+
+  useEffect(() => {
+    setName(swagger?.name || '');
+  }, [swagger])
+
+
   const enableEdit = () => {
     setIsEditing(true);
   }

@@ -26,6 +26,10 @@ export default function Sidebar() {
     setLocalSwaggers(localSwaggers.filter(swagger => swagger.id !== swaggerSelected.id));
   }
 
+  if (swaggers.length === 0) {
+    return <h2>No swaggers</h2>
+  }
+
   return (
     <div className="swagger-list">
       <ul>
