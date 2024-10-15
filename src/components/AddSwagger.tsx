@@ -38,6 +38,7 @@ export default function AddSwagger() {
       dispatch(addSwagger(swaggerToAdd));
       swaggers.push(swaggerToAdd);
       setLocalSwaggers(swaggers);
+      setFile(null);
     }
     reader.readAsText(file as Blob);
   };
