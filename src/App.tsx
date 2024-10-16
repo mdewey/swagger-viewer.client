@@ -34,7 +34,7 @@ function App() {
         </div >
       </main>
       <footer>
-        currently saving to local storage
+        currently saving to local storage, key: {LOCAL_STORAGE_KEY}
       </footer>
     </>
   )
